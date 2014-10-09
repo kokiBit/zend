@@ -24,26 +24,31 @@ return array(
             // new controllers and actions without needing to create a new
             // module. Simply drop new controllers in, and you can access them
             // using the path /application/:controller/:action
-            'adminUpload' => array(
+            'Application' => array(
                  'type'    => 'segment',
                 'options' => array(
-                    'route'    => '/admin/upload/:p/',
+                    'route'    => '/:title/',
                     'defaults' => array(
                         'controller' => 'Application\Controller\Index',
                         'action'     => 'index',
                     ),
                 ),
-                'may_terminate' => true,
-                'child_routes' => array(
-                      'complete'    =>  array(
-                        'type'  =>  'segment',
-                        'options'   =>  array(
-                            'route' =>  'complete/',
-                            'defaults'  =>  array(
-                                'controller'    => 'Application\Controller\Index',
-                                'action'     => 'index',
-                            ),
-                        ),
+            ),'Question' => array(
+                 'type'    => 'segment',
+                'options' => array(
+                    'route'    => '/:title/:id/',
+                    'defaults' => array(
+                        'controller' => 'Application\Controller\Question',
+                        'action'     => 'index',
+                    ),
+                ),
+            ),'Answer' => array(
+                 'type'    => 'segment',
+                'options' => array(
+                    'route'    => '/:title/answer/:number/',
+                    'defaults' => array(
+                        'controller' => 'Application\Controller\Answer',
+                        'action'     => 'index',
                     ),
                 ),
             ),
@@ -70,7 +75,9 @@ return array(
     ),
     'controllers' => array(
         'invokables' => array(
-            'Application\Controller\Index' => 'Application\Controller\IndexController'
+            'Application\Controller\Index' => 'Application\Controller\IndexController',
+            'Application\Controller\Question' => 'Application\Controller\QuestionController',
+            'Application\Controller\Answer' => 'Application\Controller\AnswerController'
         ),
     ),
     'view_manager' => array(

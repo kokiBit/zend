@@ -1,0 +1,41 @@
+.container {
+    margin-bottom: 40px;
+	padding: 30px;
+	border: 2px solid #E6E6E6;
+}
+
+.title {
+    margin: auto;
+    text-align: center;
+}
+
+.question {
+	margin: auto;
+	margin-top: 100px;
+    margin-bottom: 80px;
+    width:730px;
+    height: 210px;
+    background-color: #F8ECE0;
+    border: 2px solid #E6E6E6;
+}
+
+.yes {
+    width: 200px;
+    height: 200px;
+    -webkit-border-radius: 100px;/* width,heightの半分 */
+    -moz-border-radius: 100px;
+    border-radius: 100px;
+    background-color: #A9F5F2;/* 円の色 */
+    text-align: center;
+}
+
+.no {
+    width: 200px;
+    height: 200px;
+    -webkit-border-radius: 100px;/* width,heightの半分 */
+    -moz-border-radius: 100px;
+    border-radius: 100px;
+    background-color: #FA8258;/* 円の色 */
+    text-align: center;
+}
+

@@ -1,0 +1,36 @@
+.container {
+	margin-top: 40px;
+    margin-bottom: 40px;
+	padding: 30px;
+	border: 2px solid #E6E6E6;
+}
+
+.title {
+    margin: auto;
+    text-align: center;
+}
+
+.answer {
+	margin: auto;
+	margin-top: 100px;
+    margin-bottom: 80px;
+    width:730px;
+    height: 210px;
+    background-color: #F8ECE0;
+    border: 2px solid #E6E6E6;
+}
+
+.contents {
+    margin: auto;
+    margin-top: 100px;
+    margin-bottom: 80px;
+    width:730px;
+    background-color: #CEF6F5;
+    border: 2px solid #E6E6E6;
+}
+
+.contents span {
+    font-size: 1.5em; 
+}
+
+

@@ -16,7 +16,7 @@ use Zend\Http\Client;
 use Zend\Http\Request;
 //use Zend\Config\Factory;
 
-class IndexController extends AbstractActionController
+class QuestionController extends AbstractActionController
 {
     
     protected $userTable;
