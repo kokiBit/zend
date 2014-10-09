@@ -39,7 +39,7 @@ class IndexController extends AbstractActionController
         $response = $client->dispatch($request);
         $body = $response->getContent();
         $value = json_decode($body)->response;*/
-
+/*
         $testMst = $this->getTestMstTable()->fetchAll();
         $typeMst = $this->getTypeMstTable()->fetchAll();
         $questionMst = $this->getQuestionMstTable()->fetchAll();
@@ -70,9 +70,9 @@ class IndexController extends AbstractActionController
 
 
         $view = array(
-            'res' => $value,);
+            'res' => $value,);*/
 
-        return new ViewModel($view);
+        return new ViewModel();
     }
 
     public function getUserTable()
