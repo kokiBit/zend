@@ -1,19 +1,35 @@
-<?php $this->headTitle('ユーザー管理画面') ?>
+<?php $this->headTitle('恋愛診断テスト管理画面') ?>
 <?php $this->headMeta()->appendName('keywords', '') ?>
 <?php $this->headMeta()->appendName('description', '') ?>
 <?php $this->headMeta()->appendName('robots', 'noindex,nofollow') ?>
-<?php echo $this->headLink()->prependStylesheet($this->basePath() . '/css/answer.css')?>
+<?php include(dirname(__FILE__).'/../common/header.phtml');?>
 <div class="title">
-  <h1>恋愛診断テスト</h1>
-  <h1>結果</h1>
+	<h2>恋愛診断テスト<br>樹形図グラフ</h2>
 </div>
-<div class="answer">
-  <h2 style="margin-left:10px;font-size:1.5em;">あなたのタイプは</h2>
-  <h1 style="font-size:4em;text-align:center;">肉食系女子です</h1>
-</div>
-<div class="contents">
-  <span>
-    ああアアアアアアアアアアアアアアアアアアアアアアアアアアアアアアアアアアアアアアアアアアアアああアアアアアアアああああああああああああああああああああああああああああああああああアアアアアアアアアアアアアアアアアアアアアアアアあああああああああああ
-  </span>
+<div>
+	<table class="table table-bordered">
+		<tbody>
+			<tr class="active">
+				<th>問題1</th>
+				<th>問題2</th>
+				<th>結果</th>
+			</tr>
+			<tr>
+				<td><a href="#">1-1</a></td>
+				<td><a href="#">2-1</a></td>
+				<td><a href="#">キモオタタイプ</a></td>
+			</tr>
+			<tr>
+				<td></td>
+				<td><a href="#">2-2</a></td>
+				<td><a href="#">モテ男子</a></td>
+			</tr>
+			<tr>
+				<td></td>
+				<td></td>
+				<td><a href="#">矢さお</a></td>
+			</tr>
+		</tbody>
+	</table>
 </div>
 
