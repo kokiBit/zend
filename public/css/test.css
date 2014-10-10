@@ -1,0 +1,17 @@
+.container {
+    margin-top: 20px;
+    margin-bottom: 40px;
+	padding: 30px;
+	border: 2px solid #E6E6E6;
+}
+
+.question {
+	margin: auto;
+	margin-top: 100px;
+    margin-bottom: 80px;
+    width:730px;
+    height: 210px;
+    background-color: #F8ECE0;
+    border: 2px solid #E6E6E6;
+}
+
