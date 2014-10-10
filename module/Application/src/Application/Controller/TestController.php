@@ -12,17 +12,14 @@ namespace Application\Controller;
 use Zend\Mvc\Controller\AbstractActionController;
 use Zend\View\Model\ViewModel;
 
-class QuestionController extends AbstractActionController
+class TestController extends AbstractActionController
 {
-    
-    protected $userTable;
     protected $testMstTable;
     protected $typeMstTable;
     protected $questionMstTable;
 
     public function indexAction()
     {
-
         return new ViewModel();
     }
 

@@ -11,15 +11,9 @@ namespace Application\Controller;
 
 use Zend\Mvc\Controller\AbstractActionController;
 use Zend\View\Model\ViewModel;
-use Application\Model\User;
-use Zend\Http\Client;
-use Zend\Http\Request;
-//use Zend\Config\Factory;
 
 class AnswerController extends AbstractActionController
 {
-    
-    protected $userTable;
     protected $testMstTable;
     protected $typeMstTable;
     protected $questionMstTable;
@@ -29,16 +23,7 @@ class AnswerController extends AbstractActionController
 
         return new ViewModel();
     }
-
-    public function getUserTable()
-    {
-    	if(!$this->userTable) {
-    		$sm = $this->getServiceLocator();
-    		$this->userTable = $sm->get('Application\Model\UserTable');
-    	}
-    	return $this->userTable;
-    }
-
+    
     public function getTestMstTable()
     {
         if(!$this->testMstTable) {

@@ -7,43 +7,27 @@
  * @license   http://framework.zend.com/license/new-bsd New BSD License
  */
 
-namespace Application\Controller;
+namespace Admin\Controller;
 
 use Zend\Mvc\Controller\AbstractActionController;
 use Zend\View\Model\ViewModel;
-use Application\Model\User;
-use Zend\Http\Client;
-use Zend\Http\Request;
-//use Zend\Config\Factory;
 
 class IndexController extends AbstractActionController
-{
-    
-    protected $userTable;
+{  
     protected $testMstTable;
     protected $typeMstTable;
     protected $questionMstTable;
 
     public function indexAction()
     {
-
         return new ViewModel();
-    }
-
-    public function getUserTable()
-    {
-    	if(!$this->userTable) {
-    		$sm = $this->getServiceLocator();
-    		$this->userTable = $sm->get('Application\Model\UserTable');
-    	}
-    	return $this->userTable;
     }
 
     public function getTestMstTable()
     {
         if(!$this->testMstTable) {
             $sm = $this->getServiceLocator();
-            $this->testMstTable = $sm->get('Application\Model\TestMstTable');
+            $this->testMstTable = $sm->get('Admin\Model\TestMstTable');
         }
         return $this->testMstTable;
     }
@@ -52,7 +36,7 @@ class IndexController extends AbstractActionController
     {
         if(!$this->typeMstTable) {
             $sm = $this->getServiceLocator();
-            $this->typeMstTable = $sm->get('Application\Model\TypeMstTable');
+            $this->typeMstTable = $sm->get('Admin\Model\TypeMstTable');
         }
         return $this->typeMstTable;
     }
@@ -61,7 +45,7 @@ class IndexController extends AbstractActionController
     {
         if(!$this->questionMstTable) {
             $sm = $this->getServiceLocator();
-            $this->questionMstTable = $sm->get('Application\Model\QuestionMstTable');
+            $this->questionMstTable = $sm->get('Admin\Model\QuestionMstTable');
         }
         return $this->questionMstTable;
     }

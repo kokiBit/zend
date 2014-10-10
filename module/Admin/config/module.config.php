@@ -13,9 +13,9 @@ return array(
             'home' => array(
                 'type' => 'Zend\Mvc\Router\Http\Literal',
                 'options' => array(
-                    'route'    => '/',
+                    'route'    => '/admin/',
                     'defaults' => array(
-                        'controller' => 'Application\Controller\Index',
+                        'controller' => 'Admin\Controller\Index',
                         'action'     => 'index',
                     ),
                 ),
@@ -24,31 +24,53 @@ return array(
             // new controllers and actions without needing to create a new
             // module. Simply drop new controllers in, and you can access them
             // using the path /application/:controller/:action
-            'Application' => array(
-                 'type'    => 'segment',
+            'adminTop' => array(
+                 'type'    => 'Literal',
                 'options' => array(
-                    'route'    => '/:title/',
+                    'route'    => '/admin/',
                     'defaults' => array(
-                        'controller' => 'Application\Controller\Test',
+                        'controller' => 'Admin\Controller\Index',
                         'action'     => 'index',
                     ),
                 ),
-            ),'Question' => array(
-                 'type'    => 'segment',
+            ),'adminTitle' => array(
+                 'type'    => 'Literal',
                 'options' => array(
-                    'route'    => '/:title/:id/',
+                    'route'    => '/admin/title/',
                     'defaults' => array(
-                        'controller' => 'Application\Controller\Question',
+                        'controller' => 'Admin\Controller\Title',
                         'action'     => 'index',
                     ),
                 ),
-            ),'Answer' => array(
+            ),'adminType' => array(
+                 'type'    => 'Literal',
+                'options' => array(
+                    'route'    => '/admin/type/',
+                    'defaults' => array(
+                        'controller' => 'Admin\Controller\Type',
+                        'action'     => 'index',
+                    ),
+                ),
+            ),'adminUser' => array(
                  'type'    => 'segment',
                 'options' => array(
-                    'route'    => '/:title/answer/:number/',
+                    'route'    => '/admin/user/:title/',
                     'defaults' => array(
-                        'controller' => 'Application\Controller\Answer',
+                        'controller' => 'Admin\Controller\User',
                         'action'     => 'index',
+                    ),
+                ),
+                'may_terminate' => true,
+                'child_routes' => array(
+                    'complete'    =>  array(
+                        'type'  =>  'segment',
+                        'options'   =>  array(
+                            'route' =>  ':id/',
+                            'defaults'  =>  array(
+                                'controller'    => 'Admin\Controller\User',
+                                'action'     => 'regist',
+                            ),
+                        ),
                     ),
                 ),
             ),
@@ -75,9 +97,10 @@ return array(
     ),
     'controllers' => array(
         'invokables' => array(
-            'Application\Controller\Test' => 'Application\Controller\TestController',
-            'Application\Controller\Question' => 'Application\Controller\QuestionController',
-            'Application\Controller\Answer' => 'Application\Controller\AnswerController'
+            'Admin\Controller\Index' => 'Admin\Controller\IndexController',
+            'Admin\Controller\Title' => 'Admin\Controller\TitleController',
+            'Admin\Controller\Type' => 'Admin\Controller\TypeController',
+            'Admin\Controller\User' => 'Admin\Controller\UserController',
         ),
     ),
     'view_manager' => array(

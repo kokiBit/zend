@@ -7,15 +7,13 @@
  * @license   http://framework.zend.com/license/new-bsd New BSD License
  */
 
-namespace Application\Controller;
+namespace Admin\Controller;
 
 use Zend\Mvc\Controller\AbstractActionController;
 use Zend\View\Model\ViewModel;
 
-class QuestionController extends AbstractActionController
+class TitleController extends AbstractActionController
 {
-    
-    protected $userTable;
     protected $testMstTable;
     protected $typeMstTable;
     protected $questionMstTable;
@@ -30,7 +28,7 @@ class QuestionController extends AbstractActionController
     {
         if(!$this->testMstTable) {
             $sm = $this->getServiceLocator();
-            $this->testMstTable = $sm->get('Application\Model\TestMstTable');
+            $this->testMstTable = $sm->get('Admin\Model\TestMstTable');
         }
         return $this->testMstTable;
     }
@@ -39,7 +37,7 @@ class QuestionController extends AbstractActionController
     {
         if(!$this->typeMstTable) {
             $sm = $this->getServiceLocator();
-            $this->typeMstTable = $sm->get('Application\Model\TypeMstTable');
+            $this->typeMstTable = $sm->get('Admin\Model\TypeMstTable');
         }
         return $this->typeMstTable;
     }
@@ -48,7 +46,7 @@ class QuestionController extends AbstractActionController
     {
         if(!$this->questionMstTable) {
             $sm = $this->getServiceLocator();
-            $this->questionMstTable = $sm->get('Application\Model\QuestionMstTable');
+            $this->questionMstTable = $sm->get('Admin\Model\QuestionMstTable');
         }
         return $this->questionMstTable;
     }

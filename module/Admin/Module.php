@@ -7,18 +7,18 @@
  * @license   http://framework.zend.com/license/new-bsd New BSD License
  */
 
-namespace Application;
+namespace Admin;
 
 use Zend\Mvc\ModuleRouteListener;
 use Zend\Mvc\MvcEvent;
 use Zend\Db\ResultSet\ResultSet;
 use Zend\Db\TableGateway\TableGateway;
-use Application\Model\TestMstTable;
-use Application\Model\TestMst;
-use Application\Model\TypeMstTable;
-use Application\Model\TypeMst;
-use Application\Model\QuestionMstTable;
-use Application\Model\QuestionMst;
+use Admin\Model\TestMstTable;
+use Admin\Model\TestMst;
+use Admin\Model\TypeMstTable;
+use Admin\Model\TypeMst;
+use Admin\Model\QuestionMstTable;
+use Admin\Model\QuestionMst;
 
 class Module
 {
@@ -49,7 +49,7 @@ class Module
     {
         return array(
             'factories' => array(
-                'Application\Model\TestMstTable'=> function($sm) {
+                'Admin\Model\TestMstTable'=> function($sm) {
                     $tableGateway = $sm->get('TestMstTableGateWay');
                     $table = new TestMstTable($tableGateway);
                     return $table;
@@ -62,7 +62,7 @@ class Module
                         'test_mst',$dbAdapter,null,$resultSetPrototype
                     );
                 },
-                'Application\Model\TypeMstTable'=> function($sm) {
+                'Admin\Model\TypeMstTable'=> function($sm) {
                     $tableGateway = $sm->get('TypeMstTableGateWay');
                     $table = new TypeMstTable($tableGateway);
                     return $table;
@@ -75,7 +75,7 @@ class Module
                         'type_mst',$dbAdapter,null,$resultSetPrototype
                     );
                 },
-                'Application\Model\QuestionMstTable'=> function($sm) {
+                'Admin\Model\QuestionMstTable'=> function($sm) {
                     $tableGateway = $sm->get('QuestionMstTableGateWay');
                     $table = new QuestionMstTable($tableGateway);
                     return $table;
