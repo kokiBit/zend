@@ -2,18 +2,49 @@
 <?php $this->headMeta()->appendName('keywords', '') ?>
 <?php $this->headMeta()->appendName('description', '') ?>
 <?php $this->headMeta()->appendName('robots', 'noindex,nofollow') ?>
-<?php echo $this->headLink()->prependStylesheet($this->basePath() . '/css/answer.css')?>
+<?php echo $this->headLink()->prependStylesheet($this->basePath() . '/css/type.css')?>
+<?php include(dirname(__FILE__).'/../common/header.phtml');?>
+
 <div class="title">
-  <h1>恋愛診断テスト</h1>
-  <h1>結果</h1>
+	<div class="row">
+		<div class="col-xs-3">
+			<h2>タイプ入力画面</h2>
+		</div>
+		<div class="col-xs-2 col-xs-offset-5">
+			<button class="btn btn-primary btn-lg" data-toggle="modal" data-target="#myModal">説明</button>
+		</div>
+	</div>
 </div>
-<div class="answer">
-  <h2 style="margin-left:10px;font-size:1.5em;">あなたのタイプは</h2>
-  <h1 style="font-size:4em;text-align:center;">肉食系女子です</h1>
+
+<div class="contents">
+	<div class="row">
+	  <div class="col-xs-3">
+	    <h2>タイプ1</h2>
+	  </div>
+	  <div class="col-xs-3">
+	  	<span>タイトル名</span>
+	    <input type="text" class="form-control">
+	  </div>
+	  <div class="col-xs-6">
+	  	<span>タイトル名</span>
+	  	<textarea class="form-control" rows="10"></textarea>
+	  </div>
+	</div>
 </div>
 <div class="contents">
-  <span>
-    ああアアアアアアアアアアアアアアアアアアアアアアアアアアアアアアアアアアアアアアアアアアアアああアアアアアアアああああああああああああああああああああああああああああああああああアアアアアアアアアアアアアアアアアアアアアアアアあああああああああああ
-  </span>
+	<div class="row">
+	  <div class="col-xs-3">
+	    <h2>タイプ2</h2>
+	  </div>
+	  <div class="col-xs-3">
+	  	<span>タイトル名</span>
+	    <input type="text" class="form-control">
+	  </div>
+	  <div class="col-xs-6">
+	  	<span>説明</span>
+	  	<textarea class="form-control" rows="10"></textarea>
+	  </div>
+	</div>
 </div>
+
 
