@@ -1,35 +1,43 @@
-<?php $this->headTitle('管理画面タイトル入力') ?>
+<?php $this->headTitle('タイトル入力') ?>
 <?php $this->headMeta()->appendName('keywords', '') ?>
 <?php $this->headMeta()->appendName('description', '') ?>
 <?php $this->headMeta()->appendName('robots', 'noindex,nofollow') ?>
 <?php include(dirname(__FILE__).'/../common/header.phtml');?>
 <h2>タイトル作成・タイプ数選択画面</h2>
-<div class="row">
-  <div class="col-xs-3 col-xs-offset-2">
-    <h2>タイトル</h2>
+<form action="/admin/type/" method="post">
+  <div class="row">
+    <div class="col-xs-3 col-xs-offset-2">
+      <h2>タイトル</h2>
+    </div>
+    <div class="col-xs-3">
+      <input type="text" class="form-control" name="title">
+    </div>
+    <div class="col-xs-4">
+      <button class="btn btn-primary btn-lg" data-toggle="modal" data-target="#myModal">
+        説明
+      </button>
+    </div>
   </div>
-  <div class="col-xs-3">
-    <input type="text" class="form-control">
+  <div class="row">
+    <div class="col-xs-3 col-xs-offset-2">
+      <h2>タイプ数</h2>
+    </div>
+    <div class="col-xs-1">
+      <input type="text" class="form-control" name="type">
+    </div>
+    <div class="col-xs-4 col-xs-offset-2">
+      <button class="btn btn-primary btn-lg" data-toggle="modal" data-target="#myModal">
+        説明
+      </button>
+    </div>
   </div>
-  <div class="col-xs-4">
-    <button class="btn btn-primary btn-lg" data-toggle="modal" data-target="#myModal">
-      説明
-    </button>
-  </div>
-</div>
-<div class="row">
-  <div class="col-xs-3 col-xs-offset-2">
-    <h2>タイプ数</h2>
-  </div>
-  <div class="col-xs-1">
-    <input type="text" class="form-control">
-  </div>
-  <div class="col-xs-4 col-xs-offset-2">
-    <button class="btn btn-primary btn-lg" data-toggle="modal" data-target="#myModal">
-      説明
-    </button>
-  </div>
-</div>
+  <div class="row">
+    <div class="col-xs-3 col-xs-offset-5">
+      <input type="submit" class="btn btn-primary" value="戻る">
+      <input type="submit" class="btn btn-primary" value="進む">
+    </div>
+  </div> 
+</form>
 
 
 <!-- Modal -->
@@ -50,4 +58,5 @@
     </div>
   </div>
 </div>
+
   

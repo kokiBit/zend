@@ -15,36 +15,33 @@
 		</div>
 	</div>
 </div>
-
-<div class="contents">
-	<div class="row">
-	  <div class="col-xs-3">
-	    <h2>タイプ1</h2>
-	  </div>
-	  <div class="col-xs-3">
-	  	<span>タイトル名</span>
-	    <input type="text" class="form-control">
-	  </div>
-	  <div class="col-xs-6">
-	  	<span>タイトル名</span>
-	  	<textarea class="form-control" rows="10"></textarea>
-	  </div>
-	</div>
-</div>
-<div class="contents">
-	<div class="row">
-	  <div class="col-xs-3">
-	    <h2>タイプ2</h2>
-	  </div>
-	  <div class="col-xs-3">
-	  	<span>タイトル名</span>
-	    <input type="text" class="form-control">
-	  </div>
-	  <div class="col-xs-6">
-	  	<span>説明</span>
-	  	<textarea class="form-control" rows="10"></textarea>
-	  </div>
-	</div>
-</div>
+<!-- タイプ数を配列で渡す -->
+<form action="/admin/type/complete/" method="POST">
+	<?php for ($i=1; $i <= $this->type; $i++) : ?>
+		<div class="contents">
+			<div class="row">
+			  <div class="col-xs-3">
+			    <h2>タイプ<?php echo $i; ?></h2>
+			  </div>
+			  <div class="col-xs-3">
+			  	<span>タイトル名</span>
+			    <input type="text" class="form-control" name="typeName[<?php echo $i;?>]">
+			  </div>
+			  <div class="col-xs-6">
+			  	<span>結果内容</span>
+			  	<textarea class="form-control" rows="10" name="typeContents[<?php echo$i; ?>]"></textarea>
+			  </div>
+			</div>
+		</div>
+	<?php endfor; ?>
+	<div class="contents">
+		<div class="row">
+		    <div class="col-xs-3 col-xs-offset-5">
+		      <input type="submit" class="btn btn-primary" value="戻る">
+		      <input type="submit" class="btn btn-primary" value="進む">
+		    </div>
+		</div>
+  </div> 
+</form>
 
 

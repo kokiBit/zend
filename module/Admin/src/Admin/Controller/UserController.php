@@ -20,6 +20,14 @@ class UserController extends AbstractActionController
 
     public function indexAction()
     {
+        $title = $this->params()->fromRoute('title');
+        $testId = $this->params()->fromRoute('testId');
+
+        $questions = $this->getQuestionMstTable()->getQestionByTestId($testId);
+        foreach ($questions as $key => $value) {
+            var_dump($value);
+        }
+        exit();
         return new ViewModel();
     }
 

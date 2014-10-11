@@ -51,10 +51,23 @@ return array(
                         'action'     => 'index',
                     ),
                 ),
+                'may_terminate' => true,
+                'child_routes' => array(
+                    'complete'    =>  array(
+                        'type'  =>  'Literal',
+                        'options'   =>  array(
+                            'route' =>  'complete/',
+                            'defaults'  =>  array(
+                                'controller'    => 'Admin\Controller\Type',
+                                'action'     => 'complete',
+                            ),
+                        ),
+                    ),
+                ),
             ),'adminUser' => array(
                  'type'    => 'segment',
                 'options' => array(
-                    'route'    => '/admin/user/:title/',
+                    'route'    => '/admin/user/:title/:testId/',
                     'defaults' => array(
                         'controller' => 'Admin\Controller\User',
                         'action'     => 'index',

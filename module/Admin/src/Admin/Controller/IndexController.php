@@ -18,6 +18,9 @@ class IndexController extends AbstractActionController
     protected $typeMstTable;
     protected $questionMstTable;
 
+    /**
+     * トップ画面を表示させるためのアクションメソッド
+     **/
     public function indexAction()
     {
         return new ViewModel();

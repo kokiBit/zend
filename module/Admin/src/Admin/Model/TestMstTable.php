@@ -17,4 +17,16 @@ class TestMstTable
 		$resultSet = $this->tableGateway->select();
 		return $resultSet;
 	}
+
+	public function insertTestMst($title, $type)
+	{
+		$data = array(
+			'TITLE' => $title,
+			'TYPE' => $type);
+		$this->tableGateway->insert($data);
+		
+		$lastId = $this->tableGateway->lastInsertValue;
+
+		return $lastId;
+	}
 }

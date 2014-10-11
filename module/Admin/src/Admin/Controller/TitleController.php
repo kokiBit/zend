@@ -18,9 +18,11 @@ class TitleController extends AbstractActionController
     protected $typeMstTable;
     protected $questionMstTable;
 
+    /**
+     * タイトル入力が画面を表示させるメソッド
+     **/
     public function indexAction()
     {
-
         return new ViewModel();
     }
 

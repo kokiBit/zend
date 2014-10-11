@@ -12,9 +12,13 @@ class TypeMstTable
 		$this->tableGateway = $tableGateway;
 	}
 
-	public function fetchAll()
+	public function insertTypeMst($testId, $typeNumber, $typeName, $typeContents)
 	{
-		$resultSet = $this->tableGateway->select();
-		return $resultSet;
+		$data = array(
+			'TEST_ID' => $testId,
+			'Type_Number' => $typeNumber,
+			'TYPE_NAME' => $typeName,
+			'CONTENTS' => $typeContents);
+		$this->tableGateway->insert($data);
 	}
 }
