@@ -12,9 +12,9 @@ class TestMstTable
 		$this->tableGateway = $tableGateway;
 	}
 
-	public function fetchAll()
+	public function fetchAll($id)
 	{
-		$resultSet = $this->tableGateway->select();
+		$resultSet = $this->tableGateway->select(array('ID' => $id));
 		return $resultSet;
 	}
 

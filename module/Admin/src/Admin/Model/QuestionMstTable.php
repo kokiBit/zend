@@ -37,10 +37,36 @@ class QuestionMstTable
 		$select = $sql->select();
 		$select->from('question_mst');
 		$select->where(array('TEST_ID' => $testId));
+		$select->order('NUMBER ASC');
 
 		$statement = $sql->prepareStatementForSqlObject($select);
 		$results = $statement->execute();
 
 		return $results;
+	}
+
+	public function getQuestionContents($testId, $questionId)
+	{
+		$sql = new Sql($this->adapter);
+		$select = $sql->select();
+		$select->from('question_mst');
+		$select->where(array('TEST_ID' => $testId, 'NUMBER' => $questionId));
+
+		$statement = $sql->prepareStatementForSqlObject($select);
+		$results = $statement->execute();
+
+		return $results;
+	}
+
+	public function updateQuestion($contents, $questionId, $testId)
+	{
+		$sql = new Sql($this->adapter);
+		$update = $sql->update();
+		$update->table('question_mst');
+		$update->set(array('CONTENTS' => $contents,));
+		$update->where(array('TEST_ID' => $testId, 'NUMBER' => $questionId));
+
+		$statement = $sql->prepareStatementForSqlObject($update);
+		$results = $statement->execute();
 	}
 }

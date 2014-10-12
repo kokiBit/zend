@@ -1,12 +1,17 @@
-<?php $this->headTitle('問題番号'.$this->id.'入力') ?>
+<?php $this->headTitle('タイプ'.$this->id.'入力') ?>
 <?php $this->headMeta()->appendName('keywords', '') ?>
 <?php $this->headMeta()->appendName('description', '') ?>
 <?php $this->headMeta()->appendName('robots', 'noindex,nofollow') ?>
-<h2 style="text-align:center; margin:50px;">問題番号<?php echo $this->id ?></h2>
-<form action="/admin/user/<?php echo $this->title?>/<?php echo $this->testId ?>/<?php echo $this->id ?>/complete/" method="POST">
+<h2 style="text-align:center; margin:50px;">タイプ<?php echo $this->id ?></h2>
+<form action="complete/" method="POST">
+
 <div style="width:60%; margin:auto;">
-<textarea class="form-control" rows="10" name="contents"><?php echo $this->contents ?></textarea>
+	<span>タイプタイトル</span>
+	<input type="text" name="title" class="form-control" value="<?php echo $this->result['TYPE_NAME'] ?>">
 </div>
+<div style="width:60%; margin:auto; margin-top: 30px;">
+	タイプ内容
+<textarea class="form-control" rows="10" name="contents"><?php echo $this->result['CONTENTS'] ?></textarea>
 <div style="margin:auto; width:60%;margin-top:40px;">
 	<div class="row">
 		<div class="col-xs-2 col-xs-offset-4">

@@ -75,13 +75,40 @@ return array(
                 ),
                 'may_terminate' => true,
                 'child_routes' => array(
-                    'complete'    =>  array(
+                    'regist'    =>  array(
                         'type'  =>  'segment',
                         'options'   =>  array(
                             'route' =>  ':id/',
                             'defaults'  =>  array(
                                 'controller'    => 'Admin\Controller\User',
                                 'action'     => 'regist',
+                            ),
+                        ),
+                    ),'complete'    =>  array(
+                        'type'  =>  'segment',
+                        'options'   =>  array(
+                            'route' =>  ':id/complete/',
+                            'defaults'  =>  array(
+                                'controller'    => 'Admin\Controller\User',
+                                'action'     => 'complete',
+                            ),
+                        ),
+                    ),'typeRegist'    =>  array(
+                        'type'  =>  'segment',
+                        'options'   =>  array(
+                            'route' =>  'type/:id/',
+                            'defaults'  =>  array(
+                                'controller'    => 'Admin\Controller\User',
+                                'action'     => 'typeRegist',
+                            ),
+                        ),
+                    ),'typeComplete'    =>  array(
+                        'type'  =>  'segment',
+                        'options'   =>  array(
+                            'route' =>  'type/:id/complete/',
+                            'defaults'  =>  array(
+                                'controller'    => 'Admin\Controller\User',
+                                'action'     => 'typeComplete',
                             ),
                         ),
                     ),

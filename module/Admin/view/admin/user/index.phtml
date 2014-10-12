@@ -1,34 +1,39 @@
-<?php $this->headTitle('恋愛診断テスト管理画面') ?>
+<?php $testTitle = $this->title?>
+<?php $this->headTitle($testTitle.'テスト管理画面') ?>
 <?php $this->headMeta()->appendName('keywords', '') ?>
 <?php $this->headMeta()->appendName('description', '') ?>
 <?php $this->headMeta()->appendName('robots', 'noindex,nofollow') ?>
 <?php include(dirname(__FILE__).'/../common/header.phtml');?>
 <div class="title">
-	<h2>恋愛診断テスト<br>樹形図グラフ</h2>
+	<h2><?php echo $testTitle ?>テスト<br>樹形図グラフ</h2>
 </div>
 <div>
 	<table class="table table-bordered">
 		<tbody>
-			<tr class="active">
-				<th>問題1</th>
-				<th>問題2</th>
-				<th>結果</th>
-			</tr>
-			<tr>
-				<td><a href="#">1-1</a></td>
-				<td><a href="#">2-1</a></td>
-				<td><a href="#">キモオタタイプ</a></td>
-			</tr>
-			<tr>
-				<td></td>
-				<td><a href="#">2-2</a></td>
-				<td><a href="#">モテ男子</a></td>
-			</tr>
-			<tr>
-				<td></td>
-				<td></td>
-				<td><a href="#">矢さお</a></td>
-			</tr>
+			<?php $i = 1; ?>
+			<?php foreach ($this->array as $values) : ?>
+				<tr class="active">
+					<?php if($i === count($this->array)): ?>
+						<th>結果</th>
+					<?php else: ?>
+						<th>問題<?php echo $i; ?></th>
+					<?php endif; ?>
+				<?php $j = 1; ?>
+				<?php foreach ($values as $value) :?>
+					<?php if($i === count($this->array)): ?>
+						<?php if($value === "") :?>
+							<td><a href="type/<?php echo $j ?>/">入力する</a></td>
+						<?php else : ?>
+							<td><a href="type/<?php echo $j ?>/"><?php echo $value; ?></a></td>
+						<?php endif; ?>
+					<?php else: ?>
+						<td><a href="/admin/user/<?php echo $testTitle;?>/<?php echo $testId;?>/<?php echo $value; ?>/"><?php echo $value; ?></a></td>
+					<?php endif; ?>
+					<?php $j++; ?>
+				<?php endforeach; ?><br>
+				<?php $i++; ?>
+				</tr>
+			<?php endforeach; ?>
 		</tbody>
 	</table>
 </div>
