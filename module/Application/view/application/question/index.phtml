@@ -1,28 +1,28 @@
-<?php $this->headTitle('恋愛診断テスト質問') ?>
+<?php $this->headTitle($this->title.'テスト質問') ?>
 <?php $this->headMeta()->appendName('keywords', '') ?>
 <?php $this->headMeta()->appendName('description', '') ?>
 <?php $this->headMeta()->appendName('robots', 'noindex,nofollow') ?>
 <?php echo $this->headLink()->prependStylesheet($this->basePath() . '/css/question.css')?>
 <div class="title">
-    <h1>恋愛診断テスト</h1>
+    <h1><?php echo $this->title; ?></h1>
   </div>
   <div class="question">
-    <h2 style="font-family: 'Lobster', cursive; margin-left:10px;">QUESTION2</h2>
-    <span>あなたの好きなタイプはほげほげである。</span>
+    <h2 style="font-family: 'Lobster', cursive; margin-left:10px;">QUESTION<?php echo $this->question[0]; ?></h2>
+    <span><?php echo $this->result['CONTENTS']?></span>
   </div>
   <div class="row">
     <div class="col-xs-2">
     </div>
     <div class="col-xs-3">
       <div class="yes">
-        <a href="#">YES</a>
+        <a href="../<?php echo $this->question[0]+1; ?>-<?php echo $this->question[1] ?>/">YES</a>
       </div>
     </div>
     <div class="col-xs-2">
     </div>
     <div class="col-xs-3">
       <div class="no">
-        <a href="#">No</a>
+        <a href="../<?php echo $this->question[0]+1; ?>-<?php echo $this->question[1]+1; ?>/">No</a>
       </div>
     </div>
     <div class="col-xs-2">  

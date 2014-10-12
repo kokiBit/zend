@@ -1,19 +1,19 @@
-<?php $this->headTitle('恋愛診断テスト結果') ?>
+<?php $this->headTitle($this->title.'テスト結果') ?>
 <?php $this->headMeta()->appendName('keywords', '') ?>
 <?php $this->headMeta()->appendName('description', '') ?>
 <?php $this->headMeta()->appendName('robots', 'noindex,nofollow') ?>
 <?php echo $this->headLink()->prependStylesheet($this->basePath() . '/css/answer.css')?>
 <div class="title">
-  <h1>恋愛診断テスト</h1>
+  <h1><?php echo $this->title ?></h1>
   <h1>結果</h1>
 </div>
 <div class="answer">
   <h2 style="margin-left:10px;font-size:1.5em;">あなたのタイプは</h2>
-  <h1 style="font-size:4em;text-align:center;">肉食系女子です</h1>
+  <h1 style="font-size:4em;text-align:center;"><?php echo $this->result['TYPE_NAME']?>です</h1>
 </div>
 <div class="contents">
   <span>
-    ああアアアアアアアアアアアアアアアアアアアアアアアアアアアアアアアアアアアアアアアアアアアアああアアアアアアアああああああああああああああああああああああああああああああああああアアアアアアアアアアアアアアアアアアアアアアアアあああああああああああ
+  	<?php echo $this->result['CONTENTS'] ?>
   </span>
 </div>
 

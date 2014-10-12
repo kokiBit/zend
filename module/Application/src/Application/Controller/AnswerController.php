@@ -20,8 +20,22 @@ class AnswerController extends AbstractActionController
 
     public function indexAction()
     {
+        $testId = $this->params()->fromRoute('testId');
+        $typeNum = $this->params()->fromRoute('number');
 
-        return new ViewModel();
+        $testName = $this->getTestMstTable()->fetchAll($testId);
+        $results = $this->getTypeMstTable()->getTypeContents($testId, $typeNum);
+
+        foreach ($testName as $name) {
+        }
+        foreach ($results as $result) {
+        }
+
+        $view = array(
+            'title' => $name->TITLE,
+            'result' => $result,);
+
+        return new ViewModel($view);
     }
     
     public function getTestMstTable()

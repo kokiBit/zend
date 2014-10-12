@@ -22,8 +22,29 @@ class QuestionController extends AbstractActionController
 
     public function indexAction()
     {
+        $testId = $this->params()->fromRoute('testId');
+        $questionNum = $this->params()->fromRoute('id');
 
-        return new ViewModel();
+        $testName = $this->getTestMstTable()->fetchAll($testId);
+        $results = $this->getQuestionMstTable()->getQuestionContents($testId, $questionNum);
+
+        foreach ($testName as $name) {
+        }
+        foreach ($results as $key => $result) {
+        }
+
+        $question = explode('-', $questionNum);
+
+        if($name->TYPE === $question[0]) {
+            return $this->redirect()->toRoute('answer', array('testId' => $testId, 'number' => $question[1]));
+        }
+
+        $view = array(
+            'title' => $name->TITLE,
+            'result' => $result,
+            'question' => $question,);
+
+        return new ViewModel($view);
     }
 
     public function getTestMstTable()

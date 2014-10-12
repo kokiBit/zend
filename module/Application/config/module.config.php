@@ -24,28 +24,28 @@ return array(
             // new controllers and actions without needing to create a new
             // module. Simply drop new controllers in, and you can access them
             // using the path /application/:controller/:action
-            'Application' => array(
+            'application' => array(
                  'type'    => 'segment',
                 'options' => array(
-                    'route'    => '/:title/',
+                    'route'    => '/questionmaker/:testId/',
                     'defaults' => array(
                         'controller' => 'Application\Controller\Test',
                         'action'     => 'index',
                     ),
                 ),
-            ),'Question' => array(
+            ),'question' => array(
                  'type'    => 'segment',
                 'options' => array(
-                    'route'    => '/:title/:id/',
+                    'route'    => '/questionmaker/:testId/:id/',
                     'defaults' => array(
                         'controller' => 'Application\Controller\Question',
                         'action'     => 'index',
                     ),
                 ),
-            ),'Answer' => array(
+            ),'answer' => array(
                  'type'    => 'segment',
                 'options' => array(
-                    'route'    => '/:title/answer/:number/',
+                    'route'    => '/questionmaker/:testId/answer/:number/',
                     'defaults' => array(
                         'controller' => 'Application\Controller\Answer',
                         'action'     => 'index',

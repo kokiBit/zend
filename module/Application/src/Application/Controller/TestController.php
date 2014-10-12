@@ -20,7 +20,15 @@ class TestController extends AbstractActionController
 
     public function indexAction()
     {
-        return new ViewModel();
+        $testId = $this->params()->fromRoute('testId');
+        $results = $this->getTestMstTable()->fetchAll($testId);
+        foreach ($results as $key => $value) {
+        }
+
+        $view = array(
+            'title' => $value->TITLE,);
+
+        return new ViewModel($view);
     }
 
     public function getTestMstTable()
@@ -30,23 +38,5 @@ class TestController extends AbstractActionController
             $this->testMstTable = $sm->get('Application\Model\TestMstTable');
         }
         return $this->testMstTable;
-    }
-
-    public function getTypeMstTable()
-    {
-        if(!$this->typeMstTable) {
-            $sm = $this->getServiceLocator();
-            $this->typeMstTable = $sm->get('Application\Model\TypeMstTable');
-        }
-        return $this->typeMstTable;
-    }
-    
-    public function getQuestionMstTable()
-    {
-        if(!$this->questionMstTable) {
-            $sm = $this->getServiceLocator();
-            $this->questionMstTable = $sm->get('Application\Model\QuestionMstTable');
-        }
-        return $this->questionMstTable;
     }
 }
